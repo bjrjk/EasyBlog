@@ -1,0 +1,22 @@
+{% extends "template.html.twig" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <h2>Create Article:</h2>
+        <form method="post">
+            <label style="width:100%">
+                Title:
+                <input type="text" name="title" style="width:80%;" value=""/>
+            </label>
+            <br />
+            <label style="width:100%">
+                Content: (Support Markdown)
+                <br />
+                <textarea name="content" style="width:100%;height:40%"></textarea>
+            </label>
+            <div class="text-center">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    </div>
+{% endblock %}

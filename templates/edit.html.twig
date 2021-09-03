@@ -1,0 +1,27 @@
+{% extends "template.html.twig" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        {% if article %}
+            <h2>Edit Article {{ article.id }}:</h2>
+            <form method="post">
+                <label style="width:100%">
+                    Title:
+                    <input type="text" name="title" style="width:80%;" value="{{ article.title }}"/>
+                </label>
+                <br />
+                <label style="width:100%">
+                    Content: (Support Markdown)
+                    <br />
+                    <textarea name="content" style="width:100%;height:40%">{{ article.content }}</textarea>
+                </label>
+                <div class="text-center">
+                    <input type="submit" value="Submit" />
+                </div>
+
+            </form>
+        {% else %}
+            <h2>The request article doesn't exist.</h2>
+        {% endif %}
+    </div>
+{% endblock %}
